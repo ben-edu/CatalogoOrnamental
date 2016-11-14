@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->library(array('session','form_validation'));
+		$this->load->helper(array('url','form'));
+    }
 
 	/**
 	 * Index Page for this controller.
@@ -20,6 +26,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('login/login.php');
 	}
 }
